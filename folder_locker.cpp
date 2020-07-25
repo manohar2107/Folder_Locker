@@ -32,14 +32,14 @@ int main() {
 			string pass = "";
 			cout << endl << "Enter your Password: ";
 			pass = getpass();
-			while (pass != "1972")
+			while (pass != "1234")  //change password on your on convinience
 			{
 				cout << endl << "Password is incorrect" << endl;
 				cout << " Try Again!!!" << endl;
 				cout << "Enter your Password: ";
 				pass = getpass();
 			}
-			if (pass == "1972")
+			if (pass == "1234")
 			{
 				Unlock();
 			}
@@ -69,19 +69,19 @@ void Lock() {
 
 	strcpy_s(tempfolder, folder);
 
-	strcat_s(folder, "\\Desktop.ini");
+	strcat_s(folder, "\\Desktop.ini"); //concatinating configuration setting of file/folder
 
-	lfolder.open(folder, ios::out);
+	lfolder.open(folder, ios::out); 
 
-	lfolder << "[.shellClassInfo]" << endl;
-	lfolder << "CLSID = {63E23168-BFF7-4E87-A246-EF024425E4EC}" << endl;
+	lfolder << "[.shellClassInfo]" << endl; //writing shell info in file/folder
+	lfolder << "CLSID = {63E23168-BFF7-4E87-A246-EF024425E4EC}" << endl; //assigning unique identification no.
 
 	lfolder.close();
 
-	strcpy_s(attributes, "attrib +h +s ");
+	strcpy_s(attributes, "attrib +h +s "); //changing attribute to hidden(+h) and marking file/folder important system file(+s)
 	strcat_s(attributes, tempfolder);
 
-	WinExec(attributes, NULL);
+	WinExec(attributes, NULL); //executing those attributes
 
 	lfolder.open("C:\\windows\\db.dat", ios::app);
 	lfolder << "Folder Locked: " << tempfolder << endl;
@@ -106,9 +106,9 @@ void Unlock() {
 
 	strcpy_s(del, "del ");
 	strcat_s(del, folder);
-	system(del);
+	system(del); //executing delete function to erase desktop.ini file(shell info and unique ID) used while Locking
 
-	strcpy_s(attributes, "attrib -h -s ");
+	strcpy_s(attributes, "attrib -h -s "); //similarly using (-h) to unhide and (-s) to unmarking file as important
 	strcat_s(attributes, tempfolder);
 
 	WinExec(attributes, NULL);
