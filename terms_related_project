@@ -1,0 +1,14 @@
+#IMPORTANT TERMS
+
+1.Desktop.ini: It determines the way folder is customized as it contains the information and settings pertinaing folder(any changes made in folder are in desktop.ini file).
+User's cannot see desktop.ini files as they are protected by operating system(OS) and since every folder has its own hidden in-built desktop.ini files Desktop contains two
+desktop.ini files(one for user accessed desktop and other for public accessed desktop) as desktop we use is combinantion of two.
+
+2.CLSID: Its unique identification number(social security number) used to identify COM objects.It's written to our system at HKEY_CLASSES_ROOTS/CLSID,so that COM can be uploaded
+automatically.They are employed by software programs to identify files.Only one and unique CLSID tag can be supplied to COM object and stored in system registry.
+
+3.Atrrib(Attribute): It basically used to remove and set file(read file,hide,system),user can attribute using these command.
+Commands we used, +h: marks file/folder invisible to user,hiding the file
+                  +s: mark the file as important system file,hence change the priority of file
+                  -h: unmarks hidden files/folders
+                  -s: unmark the importance of file
