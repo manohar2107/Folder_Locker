@@ -21,3 +21,4 @@ Therefore,the file/folder is locked
 2.Unlock():Undo the attribute change i.e, unhide(-h) and remove it from system file(-s) and therefore unlocking file/folder.
 
 3.Getpassword():Take input from user and return the pass. string after executing enter(Ascii code 13).Change your password in the code and execute the program again to set new password of your locker.
+
